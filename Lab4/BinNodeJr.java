@@ -18,11 +18,11 @@ public class BinNodeJr <E extends Comparable<?super E>>{
     	 	return true;}
      	else{
 	 	if(left != null){ //left is not null
-			 if (left.find(q) = true){ return true;}
+			 if (left.find(q) == true){ return true;}
 			 	else {result = left.find(q);} //recur
 		}
 		if(right != null){ //right is not null
-			if (right.find(q) = true){ return true;}
+			if (right.find(q) == true){ return true;}
 				else{ result = right.find(q);}
 		}
 		return result;
@@ -40,10 +40,13 @@ public class BinNodeJr <E extends Comparable<?super E>>{
         root.setRight(node2);
 	System.out.println( root.find(10) );
 	System.out.println( root.find(30) );
-        //find() is to be implemented
-	//System.out.println("40 is found in the tree: " + root.find(40));
+	System.out.println( root.find(22) );
+	System.out.println( root.find(29) );
+        System.out.println( root.find(49) );
+	//find() is to be implemented
+	System.out.println("40 is found in the tree: " + root.find(40));
 	//find(40) shall return true
-	//System.out.println("100 is found in the tree: " + root.find(100));
+	System.out.println("100 is found in the tree: " + root.find(100));
 	//find(100) shall return false
 	                                    }
 	                                    
