@@ -18,7 +18,19 @@ public class FloodFunction {
     
     //flood function is to be implemented by students
     public void flood(int colorToFlood) {
+	for (Coord c: floodList) {
+    	if(colorOfCoord(right(c)) == colorOfCoord(c) && inbound(right(c)) && !floodList.contains(right(c))) {
+    		floodList.add(right(c));
+    	}
+    	if(colorOfCoord(down(c)) == colorOfCoord(c) && inbound(down(c)) && !floodList.contains(down(c))) {
+    		floodList.add(down(c));
+    	}
+    //Currently uses the Right and Down relation, since we had difficulties getting up and left to work properly, since you will hit a bound much earlier with up/left than with down and right.	
+    	
+    	}
     }
+    
+
 
     //is input cell (specified by coord) on the board?
     public boolean inbound(final Coord coord) {
