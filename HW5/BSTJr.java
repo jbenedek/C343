@@ -71,15 +71,26 @@ public class BSTJr <K extends Comparable<?super K>> {
 	}
 
 	public void kSmallest(int k){
-		System.out.print("The " + k + "smallest is: ");
+		System.out.print("The " + k + " smallest is: ");
 		kSmallestAcc(k, root, 0);
 	}
 
 	public void kSmallestAcc(int ktoSearch, BinNode<K> node, int acc){
-		if(node.value.comparesTo(ktoSearch) == 0){ System.out.println( node.value);	
-
-		System.out.println("Value...");
-	}
+		  if(node.getLeft() != null && node.getRight() != null){
+			  if(node.getLeft().getSize()  == ktoSearch){ 
+				  System.out.println(node.getKey());
+				  
+			} else{ 
+			  if(node.getLeft().getSize() < ktoSearch){ //size is less then K, so focus on right
+				  kSmallestAcc(ktoSearch - node.getLeft().getSize(), node.getRight(), acc + node.getLeft().getSize());
+				  System.out.println("right");
+			  } else{  if(node.getLeft().getSize()  > ktoSearch){ //size is bigger than K, so focus on left
+				  kSmallestAcc(ktoSearch, node.getLeft(), acc); 
+				  System.out.println("left");
+			}
+			else{System.out.println("else");}
+		}}
+		  }}
 
 	public static void main(String[] argv) {
 		BSTJr<Integer> tree = new BSTJr<Integer>();
@@ -93,6 +104,6 @@ public class BSTJr <K extends Comparable<?super K>> {
 		tree1.build(ks1);
 		tree1.display();
 		tree1.checkBal();
-		tree1.kSmallest(2);
+		tree1.kSmallest(1);
 	}
 }

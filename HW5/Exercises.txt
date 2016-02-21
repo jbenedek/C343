@@ -32,5 +32,5 @@ we must search the right tree.. If K < size of the left tree, then it is in the 
 Since a BST is in order, we can traverse through the tree (in-order). We then use a counter variable to determine how many values we have looked at,
 and when we get that variable to K, we have found the K smallest term.  
 
-Implementation: See HW5.java
+Implementation: See BSTJr.java
 
