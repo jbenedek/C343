@@ -20,5 +20,7 @@ Homework 7
 		Since you must check every element, so theta(n).
 
 2. Counting sort. 
-	See Count.java
+	See Count2.java
+
+3. This is efficient when the range between elements is close to the number of items. The running time is in Theta(n) since every element of the list is being accessed. 
 
