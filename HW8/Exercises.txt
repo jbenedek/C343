@@ -1,0 +1,31 @@
+Homework 8
+
+
+
+1. Exercise 9.10
+
+	list[] is the array storing the list
+	void Transpose(String s){
+		boolean isIn = false;
+		for(String w : list) {
+			if(w.equals(s)) { w.swap(s); isIn = true;}
+			else { if (inIn == false) list.append(s);}
+		
+		}
+}
+
+2. Exercise 9.13
+a.no
+b.yes
+c.yes
+d.yes
+
+
+
+
+3. Exercise 9.14
+
+
+
+
+4. See Search.java
