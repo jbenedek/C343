@@ -6,7 +6,6 @@ import java.io.*;
 //This program will return the frequency of the word in the given document. I misread the instructions, instead of storing the number of lines the word appears, I am storing the number of times a word appears.
 public class Search{
   	
- 	Hashtable<String, Word> words = new Hashtable<String, Word>();
 	Hashtable map = new Hashtable();
 
   	public static void main(String[] args) throws IOException{
