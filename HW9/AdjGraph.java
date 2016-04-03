@@ -133,7 +133,42 @@ public class AdjGraph implements Graph {
 		System.out.println();
 	}
 	//topological sort using queue -- to be implemented
-	public void topSort() {
+	public void topSort() { //based off the psuedocode. currently lacks testing method
+		ArrayList<Integer> sorted = new ArrayList();
+	  	ArrayList<Integer> ndegree = new ArrayList();
+   		ArrayList<Integer> queue = new ArrayList();
+   		ArrayList<Integer> daq = new ArrayList<Integer>(queue);
+ 
+   		boolean isSorted = true;
+   		walk("DFS");
+   		while(queue != null){
+     			int u = queue.remove(0);
+     			sorted.add(u);
+   		}
+   
+   		for(LinkedList<Integer> a : adjList){
+     			for(Integer v : a){
+       				int data = ndegree.get(v);
+        			data -= 1;
+       				if(ndegree.get(v) == 0)
+       					queue.add(v);
+       		}}
+   		for(int i = 0; i < sorted.size(); i++){
+     			for(int j =0; j< daq.size(); j++){
+     				if (sorted.get(i).equals(daq.get(j)))
+					isSorted = true;
+     				else 
+					isSorted = false;
+			}
+   			if (isSorted == false){
+     				break;}
+   		}
+                  
+	     if(isSorted){
+	    	   System.out.println(sorted);
+	     }
+     	     else System.out.println("No solution");
 
 	}
+
 }
